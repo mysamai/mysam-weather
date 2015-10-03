@@ -1,0 +1,31 @@
+{
+  "name": "mysam-weather",
+  "version": "0.0.1",
+  "description": "Tells you about the weather",
+  "main": "lib/",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "rm -rf dist/ && mkdir dist && npm run babel && npm run less",
+    "less": "lessc src/styles.less > dist/styles.css",
+    "babel": "browserify src/weather.js -t babelify --outfile dist/weather.js --standalone MySam.Weather"
+  },
+  "author": "David Luecke",
+  "license": "MIT",
+  "mysam": {
+    "public": ".",
+    "client": "dist/weather",
+    "styles": "dist/styles.css"
+  },
+  "devDependencies": {
+    "babelify": "^6.3.0",
+    "browserify": "^11.2.0",
+    "less": "^2.5.3",
+    "simpleweather": "^3.0.2"
+  },
+  "browser": {
+    "simpleweather": "./node_modules/simpleweather/jquery.simpleWeather.js"
+  },
+  "browserify-shim": {
+    "simpleweather": "jQuery"
+  }
+}
