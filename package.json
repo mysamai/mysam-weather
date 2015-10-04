@@ -1,6 +1,6 @@
 {
   "name": "mysam-weather",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Let Sam tell you about the weather",
   "main": "lib/",
   "scripts": {
