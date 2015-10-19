@@ -3,7 +3,7 @@ import 'simpleweather';
 const $ = window.jQuery;
 
 export function template(weather) {
-  return `<div class="mysam-weather">
+  return `<div class="mysam-weather animated fadeIn">
     <h1>
       <i class="icon-${weather.code}"></i>
       ${weather.temp}&deg;
@@ -32,10 +32,7 @@ export default function(sam) {
     description: 'Tell you the weather',
     tags: ['location'],
     form: function(el, save) {
-      el.html(`<p><button class="fa fa-check" type="submit"></button></p>`)
-        .on('submit', function() {
-          save({ type: 'weather' });
-        });
+      el.on('submit', () => save({ type: 'weather' }));
     }
   });
 
