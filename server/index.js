@@ -20,6 +20,14 @@ module.exports = function (sam) {
       }, function(error, action) {
         debug('Added training data `' + action.text + '` (' + action._id + ')');
       });
+
+      actions.create({
+        "text": "tell me the weather",
+        "action": {"type": "weather"},
+        "tags": []
+      }, function(error, action) {
+        debug('Added training data `' + action.text + '` (' + action._id + ')');
+      });
     }
   });
 };

@@ -15,6 +15,10 @@
   },
   "author": "David Luecke",
   "license": "MIT",
+  "keywords": [
+    "weather",
+    "mysam-plugin"
+  ],
   "mysam": {
     "public": ".",
     "client": "dist/weather",
