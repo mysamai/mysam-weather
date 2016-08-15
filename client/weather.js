@@ -1,7 +1,5 @@
 import 'simpleweather';
 
-const $ = window.jQuery;
-
 export function template(weather) {
   return `<div class="mysam-weather animated fadeIn">
     <h1>
@@ -17,7 +15,7 @@ export function template(weather) {
   </div>`;
 }
 
-export default function(sam) {
+export default function(sam, { $ }) {
   let geoLocation = new Promise((resolve, reject) => {
     navigator.geolocation.getCurrentPosition(function (position, error) {
       if(error) {
@@ -28,18 +26,17 @@ export default function(sam) {
     });
   });
 
-  sam.learn({
-    description: 'Tell you the weather',
-    tags: ['location'],
-    form: function(el, save) {
-      el.on('submit', () => save({ type: 'weather' }));
-    }
+  sam.learn('weather', {
+    description: 'Tell the weather',
+    tags: ['location']
   });
 
   sam.action('weather', function(el, classification) {
     let requestedLocation = classification.extracted.location ?
-      classification.extracted.location[0] : null;
+      classification.extracted.location : null;
 
+    el = $(el);
+    
     let loadWeather = (location, woeid) => {
       $.simpleWeather({
         location: location,

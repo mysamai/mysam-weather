@@ -20,7 +20,6 @@
     "mysam-plugin"
   ],
   "mysam": {
-    "public": ".",
     "client": "dist/weather",
     "styles": "dist/styles.css"
   },
