@@ -24,8 +24,8 @@
     "styles": "dist/styles.css"
   },
   "devDependencies": {
-    "babelify": "^6.3.0",
-    "browserify": "^11.2.0",
+    "babelify": "^7.3.0",
+    "browserify": "^14.4.0",
     "less": "^2.5.3",
     "simpleweather": "^3.1.0"
   },
@@ -36,6 +36,6 @@
     "simpleweather": "jQuery"
   },
   "dependencies": {
-    "debug": "^2.2.0"
+    "debug": "^3.0.1"
   }
 }
